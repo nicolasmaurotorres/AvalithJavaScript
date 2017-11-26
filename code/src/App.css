@@ -22,9 +22,10 @@
   padding: .75em;
 }
 
-.box{
+.box {
   background: blue;
   margin: 1em;
+  width: 20rem;
 }
 
 .wrapper-flex{
@@ -72,15 +73,14 @@
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
   fill: #373a47;
-  
 }
 
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
   padding: 0.8em;
-  
 }
+
 
 /* Styling of overlay */
 .bm-overlay {
@@ -94,6 +94,8 @@
   size: 3em !important;
   left: 1em;
 }
+
+
 
 /*hide the gigantic button in the style-in-line from the component*/
 html body div div div div div div button {
