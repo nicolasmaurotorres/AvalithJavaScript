@@ -1,15 +1,87 @@
-.header-banner{
-  size: 4em
+.wrapper-head {
+   background: rgb(0, 0, 0);
+   height: 4em;
+   width: 100%;
+ }
+
+ .sidebar-description{
+   background: grey;
+   width: 100%;
+ }
+
+.sidebar-search{
+  color: gray;
+  float: right;
+  border: 0;
+  outline: 0 !important;
+  background: transparent;
+  border-bottom: 2px solid black;
+}
+
+.radio{
+  padding: .75em;
+  
+}
+/***************************BURGER MENU CSS*******************************************************/
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: inherit;
+  width: 2em;
+  height: 2em;
+  left: 1em;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: black;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
 
 }
- .img-logo{
-  margin-left: 1.5em;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-  height: 2em;
-  width: 2em;
- }
- .wrapper-img {
-   background: rgb(0, 0, 0);
-   size: 4em;
- }
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+  
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: black;
+  font-size: 1.15em;
+  overflow: hidden !important;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+  
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+  
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+/*Style icon button burger*/
+.bm-icon{
+  position: inherit;
+  margin-top: 1em;
+  margin-left: 0.75em;
+  size: 3em !important;
+  left: 1em;
+}
+
+/***************************BURGER MENU CSS*******************************************************/
+
+

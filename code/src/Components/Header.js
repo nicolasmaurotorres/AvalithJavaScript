@@ -1,47 +1,70 @@
 import React, { Component } from 'react';
-import SideBar from 'react-sidebar';
+import { slide as Menu } from 'react-burger-menu'
+import { Radio } from 'react-bootstrap';
+
 import '../App.css'
 
 class Header extends Component {
     constructor(props){
         super(props);
 
-        this._onClickLogo = this._onClickLogo.bind(this);
+        //this._onClickRadio = this._onClickRadio.bind(this);
+        this._handleOptionChange = this._handleOptionChange.bind(this);
 
         this.state = {
-            openedSidebar : false
+            selectedOption : null
         }
     }
-
-    _onClickLogo(e){
-        e.preventDefault();
-        this.setState({sidebarVisible : !this.state.openedSidebar});
+   
+    _handleOptionChange(changeEvent){
+        this.setState({
+            selectedOption: changeEvent.target.value
+        });
     }
 
     render() {
-
-        var sidebarContent = <div> 
-                                <h3>Filters</h3>
-                                <input type="text" name="filter"/>
-                                <h3>Fruits</h3>
-                                <label>
-                                    <input type="checkbox" className="radio" value="1" name="fooby[1][]" />Kiwi</label>
-                                <label>
-                                    <input type="checkbox" className="radio" value="1" name="fooby[1][]" />Jackfruit</label>
-                                <label>
-                                    <input type="checkbox" className="radio" value="1" name="fooby[1][]" />Mango</label>
-                            </div>
-
         return (
-            <div className="wrapper-img">
-                {/*<SideBar sidebar={ sidebarContent} open={this.state.openedSidebar} onSetOpen={ this._onClickLogo } > Otro contenido </SideBar>*/}
+            <div className="wrapper-head">
+            <Menu  customBurgerIcon={<img className="bm-burger-button logo-header" alt="logo-not-found" src={require('../Assests/avalith.png')}   />}>
+                <img  className="bm-burger-button" alt="logo-not-found" src={require('../Assests/avalith.png') } />
+                <div className="sidebar-description">
+                    <p> DEV NAME </p>
+                    <p> DNI XX XXX XXX</p>
+                    <p> YY YEARS OLD</p>
+                </div>
+                <input type="text" name="filter" placeholder="Search in cards" className="sidebar-search"/>
+                <br/>
+                <label className="radio">
+                    <input type="radio" value="option1" 
+                      checked={this.state.selectedOption === 'option1'} 
+                      onChange={this._handleOptionChange} />
+                    Frontend
+                </label>
+                <label className="radio">
+                    <input type="radio" value="option2" 
+                      checked={this.state.selectedOption === 'option2'} 
+                      onChange={this._handleOptionChange} />
+                    Backend
+                </label>
                 
-                    <img className="img-logo" alt="logo-not-found" src={require('../Assests/avalith.png')}  onClick={ this._onClickLogo } />
-                
-             </div>
-             
+                {/*
+                <h3>Filter by</h3>
+                <label>
+                    <input type="radio" className="radio" onClick={this._onClickRadio}/>  Frontend
+                </label>
+                <label>
+                    <input type="radio"  className="radio" onClick={this._onClickRadio} />  Backend
+                </label>
+                    <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>*/}
+            </Menu>
+            </div>
         );
     }
 }
 
 export default Header;
+
+
+
+
+  
