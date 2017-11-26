@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { slide as Menu } from 'react-burger-menu'
-import { Radio } from 'react-bootstrap';
 
 import '../App.css'
 
@@ -8,11 +7,14 @@ class Header extends Component {
     constructor(props){
         super(props);
 
-        //this._onClickRadio = this._onClickRadio.bind(this);
+        
+        this._onClickLogo = this._onClickLogo.bind(this);
         this._handleOptionChange = this._handleOptionChange.bind(this);
+        this._isMenuOpen= this._isMenuOpen.bind(this);
 
         this.state = {
-            selectedOption : null
+            selectedOption : null,
+            isOpen : false
         }
     }
    
@@ -22,11 +24,26 @@ class Header extends Component {
         });
     }
 
+    _onClickLogo(e){
+        e.preventDefault();
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
+        console.log("pase click logo");
+    }
+
+
+    _isMenuOpen(state){
+        debugger;
+        console.log("pase click menu");
+        return state.isOpen;
+    }
+
     render() {
         return (
             <div className="wrapper-head">
-            <Menu  customBurgerIcon={<img className="bm-burger-button logo-header" alt="logo-not-found" src={require('../Assests/avalith.png')}   />}>
-                <img  className="bm-burger-button" alt="logo-not-found" src={require('../Assests/avalith.png') } />
+            <Menu isOpen={this.state.isOpen} /*onStateChange={ this._isMenuOpen }*/ customBurgerIcon={<img onClick={ this._onClickLogo } className="bm-burger-button logo-header" alt="logo-not-found" src={require('../Assests/avalith.png')}   />}>
+                <img  onClick={ this._onClickLogo } className="bm-burger-button" alt="logo-not-found" src={require('../Assests/avalith.png')  } />
                 <div className="sidebar-description">
                     <p> DEV NAME </p>
                     <p> DNI XX XXX XXX</p>

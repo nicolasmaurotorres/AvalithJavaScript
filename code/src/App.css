@@ -20,7 +20,21 @@
 
 .radio{
   padding: .75em;
-  
+}
+
+.box{
+  background: blue;
+  margin: 1em;
+}
+
+.wrapper-flex{
+  flex-wrap: wrap;
+  flex-basis: 3;
+}
+
+.card-img-top{
+  width: 3em;
+  height: 3em;
 }
 /***************************BURGER MENU CSS*******************************************************/
 /* Position and sizing of burger button */
@@ -40,13 +54,12 @@
 .bm-cross-button {
   height: 24px;
   width: 24px;
-
 }
 
 /* Color/shape of close button cross */
 .bm-cross {
   background: #bdc3c7;
-  
+  visibility: hidden;
 }
 
 /* General sidebar styles */
@@ -82,6 +95,10 @@
   left: 1em;
 }
 
+/*hide the gigantic button in the style-in-line from the component*/
+html body div div div div div div button {
+  visibility: hidden;
+}
 /***************************BURGER MENU CSS*******************************************************/
 
 
