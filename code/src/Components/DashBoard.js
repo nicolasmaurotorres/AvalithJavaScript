@@ -12,6 +12,7 @@ class DashBoard extends Component {
 
     _openPost(event){
         event.preventDefault();
+        debugger;
         this.props.history.push('/post?id='+event.target.id); //redirect you
     }
 
@@ -26,7 +27,7 @@ class DashBoard extends Component {
                               <Card img = { cards[i].cardImageUrl } 
                                     title = { cards[i].cardTitle } 
                                     description = { cards[i].cardDescription }
-                                    id = { cards[i].cardId } /> 
+                                    id = { cards[i].cardId - 1} /> 
                         </Col>);
         }
 

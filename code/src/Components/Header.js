@@ -6,7 +6,6 @@ import '../App.css'
 class Header extends Component {
     constructor(props){
         super(props);
-
         
         this._onClickLogo = this._onClickLogo.bind(this);
         this._handleOptionChange = this._handleOptionChange.bind(this);
@@ -63,16 +62,6 @@ class Header extends Component {
                       onChange={this._handleOptionChange} />
                     Backend
                 </label>
-                
-                {/*
-                <h3>Filter by</h3>
-                <label>
-                    <input type="radio" className="radio" onClick={this._onClickRadio}/>  Frontend
-                </label>
-                <label>
-                    <input type="radio"  className="radio" onClick={this._onClickRadio} />  Backend
-                </label>
-                    <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>*/}
             </Menu>
             </div>
         );
